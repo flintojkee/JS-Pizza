@@ -1,11 +1,42 @@
 .sidenav {
     height: 100%;
-    width:320px;
+    width: @SideNavWidth;
     position: fixed;
     z-index: 2;
     top: 0;
     right: 0;
-    background-color: #111;
+    box-shadow: rgba(0,0,0,0.25) -4px 4px 10px;
+    background-color: lightgray;
+}
+@SideNavTopHeight: 80px;
+@SideNavBottomHeight: 110px;
+.order-raw1 .order-raw2 .order-raw3 {
     overflow-x: hidden;
-    padding-top: 20px;
+}
+.order-raw2 {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: @SideNavTopHeight + 20px;
+    padding-bottom: @SideNavBottomHeight;
+}
+.order-raw1 {
+    width: 100%;
+    height: @SideNavTopHeight;
+    padding-top: 25px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.order-raw3{
+    width: 100%;
+    height: @SideNavBottomHeight;
+    padding: 10px;
+    margin: 0;
+    background-color:  white;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
