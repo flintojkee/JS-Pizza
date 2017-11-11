@@ -1,13 +1,70 @@
 .navbar {
     margin-bottom: 0;
+
     border-radius: 0;
     z-index: 1;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
     width: 100%;
     height: @NavBarHeight;
     position: fixed;
-  }
-.login{
-  float: right;
-  padding-right: 350px;
-}
+
+    h2{margin: 0;}
+    h3{margin: 0;}
+    a{text-decoration: none ;}
+
+  .logo{
+    font-size: 19px;
+    text-align: center;
+    color: #fff;
+    }
+
+  .navbar-raw {
+      padding-left: 130px;
+      padding-right: @SideNavWidth+20px;
+
+    .navbar-top-raw {
+      width: 100%;
+      font-size: 12px;
+      line-height: 11px;
+      margin: 5px 10px 10px 0;
+      padding-top: 10px;
+      border-bottom: 1px solid;
+      color: #a1a1a1;
+
+      .login{
+        float: right;
+        margin-top: -11px;
+        @media (max-width: 700px) {
+        margin-top: 5px;
+      }
+      }
+
+      .phone-number {
+        font-size: 20px;
+        padding-right: 30px;
+        padding-bottom: 15px;
+        @media (max-width: 700px) {
+          width: 100%;
+          font-size: 14px;
+          padding: 0;
+        }
+      }
+      }
+
+      .work-days {
+        font-size: 12px;
+        padding-right: 30px;
+      }
+
+      .delivery {
+        font-size: 16px;
+        padding-right: 30px;
+      }
+    }
+
+    .navbar-bottom-raw {
+      padding-bottom: 10px;
+      font-size: 16px;
+    }
+   }
+

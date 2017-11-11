@@ -1,0 +1,24 @@
+.badge-logo{
+  position: fixed;
+  top: 0;
+  background: @mainColor;
+  z-index: 99;
+  width: 100px;
+  height: @NavBarHeight;
+  padding: 15px 10px 10px;
+  border-left: 1px solid #d16200;
+  border-right: 1px solid #d16200;
+}
+.badge-discount{
+  width: 100px;
+  height: 11px;
+  top: -11px;
+  left: -1px;
+  background-size: 100px 11px;
+  background: url(../images/discount.svg) no-repeat;
+  position: absolute;
+}
+.top-badge-discount{
+  top: @NavBarHeight;
+  transform: scaleY(-1);
+}
