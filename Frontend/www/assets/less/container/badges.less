@@ -22,3 +22,40 @@
   top: @NavBarHeight;
   transform: scaleY(-1);
 }
+.discount-panel {
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  background: #ea862e;
+  z-index: 99;
+  width: 100px;
+  border-left: 1px solid #d16200;
+  border-right: 1px solid #d16200;
+  padding: 10px;
+  color: #fff;
+  .discount-title {
+    font-family: Helvetica,Calibri;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px dotted #d16301;
+    margin-bottom: 7px;
+    padding-bottom: 3px;
+    text-align: center;
+  }
+  .discount-text {
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+.discount-before {
+  width: 100px;
+  height: 11px;
+  top: -11px;
+  left: -1px;
+  background-size: 100px 11px;
+  background: url(../images/discount.svg) no-repeat;
+  padding: 0!important;
+  margin: 0!important;
+  position: absolute;
+}

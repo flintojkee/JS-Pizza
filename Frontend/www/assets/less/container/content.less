@@ -1,11 +1,36 @@
 .content{
   margin: auto;
+  padding-right: @SideNavWidth+30px;
   padding-left: 30px;
-  padding-right: 30px;
   max-width: 1354px;
+
   overflow: auto;
   .content-pizza-list{
     width: 100%;
     overflow: inherit;
   }
+  .content-title {
+    text-align: center;
+    .orange {
+      background-color: #ec890e!important;
+    }
+  }
+  .all-pizza-type-wrap{
+    text-align: center;
+    .all-pizza-type {
+      display: inline-block;
+      .active a{
+        background-color: @mainColor;
+        color: #fff;
+      }
+      .active a:hover {
+        background-color: @mainColor;
+        color: #fff;
+      }
+    }
+    .nav-pills a {
+      color: @mainColor;
+    }
+  }
+
 }

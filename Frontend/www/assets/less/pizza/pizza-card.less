@@ -5,25 +5,39 @@
      color: @mainColor;
      background-color: lighten(@mainColor, 45%);
    }
-}
+   .pizza-icon {
+    width: 100%;
+    max-width: 300px;
+  }
   .thumbnail {
-    img{
-      width: 100%;
-      max-width: 300px;
-    }
+
     .caption{
+      padding: 9px;
+      color: #333;
       .title{
-        padding: 9px;
-        color: #333;
+        font-size: 30px;
+        color: @mainColor;
+        font-weight: 700;
+        font-family: "Helvetica Neue";
       }
       .type{
-        font-size: 10px;
+        font-size: 12px;
         color: #a8a5a5;
       }
       .description{
         font-size: 14px;
         overflow: hidden;
         height: 65px;
+        text-overflow: ellipsis;
       }
     }
   }
+ .pizza-label-new, .pizza-label-popular {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+  .pizza-small, .pizza-big{
+    text-align: center;
+  }
+}
