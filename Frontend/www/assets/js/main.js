@@ -9,6 +9,7 @@ var pizza_info = [
         icon:'assets/images/pizza_7.jpg',
         title: "Імпреза",
         type: 'М’ясна піца',
+        filter:['pizza','meat','pineapples'],
         content: {
             meat: ['балик', 'салямі'],
             chicken: ['куриця'],
@@ -37,6 +38,7 @@ var pizza_info = [
         icon:'assets/images/pizza_2.jpg',
         title: "BBQ",
         type: 'М’ясна піца',
+        filter:['pizza','meat','mushrooms'],
         content: {
             meat: ['мисливські ковбаски', 'ковбаски папероні', 'шинка'],
             cheese: ['сир домашній'],
@@ -62,6 +64,7 @@ var pizza_info = [
         icon:'assets/images/pizza_1.jpg',
         title: "Міксовий поло",
         type: 'М’ясна піца',
+        filter:['pizza','meat','pineapples'],
         content: {
             meat: ['вітчина', 'куриця копчена'],
             cheese: ['сир моцарелла'],
@@ -86,6 +89,7 @@ var pizza_info = [
         icon:'assets/images/pizza_5.jpg',
         title: "Сициліано",
         type: 'М’ясна піца',
+        filter:['pizza','meat','mushrooms'],
         content: {
             meat: ['вітчина', 'салямі'],
             cheese: ['сир моцарелла'],
@@ -110,6 +114,7 @@ var pizza_info = [
         icon:'assets/images/pizza_3.jpg',
         title: "Маргарита",
         type: 'Вега піца',
+        filter:['pizza','vega'],
         content: {
             cheese: ['сир моцарелла', 'сир домашній'],
             tomato: ['помідори'],
@@ -127,6 +132,7 @@ var pizza_info = [
         icon:'assets/images/pizza_6.jpg',
         title: "Мікс смаків",
         type: 'М’ясна піца',
+        filter:['pizza','meat','pineapples'],
         content: {
             meat: ['ковбаски'],
             cheese: ['сир моцарелла'],
@@ -152,6 +158,7 @@ var pizza_info = [
         icon:'assets/images/pizza_8.jpg',
         title: "Дольче Маре",
         type: 'Морська піца',
+        filter:['pizza','ocean'],
         content: {
             ocean: ['криветки тигрові', 'мідії', 'ікра червона', 'філе червоної риби'],
             cheese: ['сир моцарелла'],
@@ -169,6 +176,7 @@ var pizza_info = [
         icon:'assets/images/pizza_4.jpg',
         title: "Россо Густо",
         type: 'Морська піца',
+        filter:['pizza','ocean'],
         content: {
             ocean: ['ікра червона', 'лосось копчений'],
             cheese: ['сир моцарелла'],
@@ -371,21 +379,59 @@ function showPizzaList(list) {
 function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
     var pizza_shown = [];
-
+    var quantity = 0;
     Pizza_List.forEach(function(pizza){
         //Якщо піка відповідає фільтру
-        //pizza_shown.push(pizza);
+        if($.inArray(filter, pizza.filter) !== -1){
 
-        //TODO: зробити фільтри
+            pizza_shown.push(pizza);
+            quantity++;
+        }
     });
-
+    $(".pizza-count").html(quantity);
     //Показати відфільтровані піци
     showPizzaList(pizza_shown);
 }
 
 function initialiseMenu() {
     //Показуємо усі піци
-    showPizzaList(Pizza_List)
+    showPizzaList(Pizza_List);
+    $("#filter-button-all-pizza").click(function(){
+        $(".count-tile").html("Усі піци");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('pizza');
+    });
+    $("#filter-button-meat").click(function(){
+        $(".count-tile").html("М’ясні");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('meat');
+    });
+    $("#filter-button-pineapples").click(function(){
+        $(".count-tile").html("З ананасами");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('pineapples');
+    });
+    $("#filter-button-mushrooms").click(function(){
+        $(".count-tile").html("З грибами");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('mushrooms');
+    });
+    $("#filter-button-ocean").click(function(){
+        $(".count-tile").html("З морепродуктами");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('ocean');
+    });
+    $("#filter-button-vega").click(function(){
+        $(".count-tile").html("Вега");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('vega');
+    });
 }
 
 exports.filterPizza = filterPizza;

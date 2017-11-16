@@ -34,21 +34,59 @@ function showPizzaList(list) {
 function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
     var pizza_shown = [];
-
+    var quantity = 0;
     Pizza_List.forEach(function(pizza){
         //Якщо піка відповідає фільтру
-        //pizza_shown.push(pizza);
+        if($.inArray(filter, pizza.filter) !== -1){
 
-        //TODO: зробити фільтри
+            pizza_shown.push(pizza);
+            quantity++;
+        }
     });
-
+    $(".pizza-count").html(quantity);
     //Показати відфільтровані піци
     showPizzaList(pizza_shown);
 }
 
 function initialiseMenu() {
     //Показуємо усі піци
-    showPizzaList(Pizza_List)
+    showPizzaList(Pizza_List);
+    $("#filter-button-all-pizza").click(function(){
+        $(".count-tile").html("Усі піци");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('pizza');
+    });
+    $("#filter-button-meat").click(function(){
+        $(".count-tile").html("М’ясні");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('meat');
+    });
+    $("#filter-button-pineapples").click(function(){
+        $(".count-tile").html("З ананасами");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('pineapples');
+    });
+    $("#filter-button-mushrooms").click(function(){
+        $(".count-tile").html("З грибами");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('mushrooms');
+    });
+    $("#filter-button-ocean").click(function(){
+        $(".count-tile").html("З морепродуктами");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('ocean');
+    });
+    $("#filter-button-vega").click(function(){
+        $(".count-tile").html("Вега");
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        filterPizza('vega');
+    });
 }
 
 exports.filterPizza = filterPizza;

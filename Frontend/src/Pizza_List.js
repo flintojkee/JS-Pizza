@@ -8,6 +8,7 @@ var pizza_info = [
         icon:'assets/images/pizza_7.jpg',
         title: "Імпреза",
         type: 'М’ясна піца',
+        filter:['pizza','meat','pineapples'],
         content: {
             meat: ['балик', 'салямі'],
             chicken: ['куриця'],
@@ -36,6 +37,7 @@ var pizza_info = [
         icon:'assets/images/pizza_2.jpg',
         title: "BBQ",
         type: 'М’ясна піца',
+        filter:['pizza','meat','mushrooms'],
         content: {
             meat: ['мисливські ковбаски', 'ковбаски папероні', 'шинка'],
             cheese: ['сир домашній'],
@@ -61,6 +63,7 @@ var pizza_info = [
         icon:'assets/images/pizza_1.jpg',
         title: "Міксовий поло",
         type: 'М’ясна піца',
+        filter:['pizza','meat','pineapples'],
         content: {
             meat: ['вітчина', 'куриця копчена'],
             cheese: ['сир моцарелла'],
@@ -85,6 +88,7 @@ var pizza_info = [
         icon:'assets/images/pizza_5.jpg',
         title: "Сициліано",
         type: 'М’ясна піца',
+        filter:['pizza','meat','mushrooms'],
         content: {
             meat: ['вітчина', 'салямі'],
             cheese: ['сир моцарелла'],
@@ -109,6 +113,7 @@ var pizza_info = [
         icon:'assets/images/pizza_3.jpg',
         title: "Маргарита",
         type: 'Вега піца',
+        filter:['pizza','vega'],
         content: {
             cheese: ['сир моцарелла', 'сир домашній'],
             tomato: ['помідори'],
@@ -126,6 +131,7 @@ var pizza_info = [
         icon:'assets/images/pizza_6.jpg',
         title: "Мікс смаків",
         type: 'М’ясна піца',
+        filter:['pizza','meat','pineapples'],
         content: {
             meat: ['ковбаски'],
             cheese: ['сир моцарелла'],
@@ -151,6 +157,7 @@ var pizza_info = [
         icon:'assets/images/pizza_8.jpg',
         title: "Дольче Маре",
         type: 'Морська піца',
+        filter:['pizza','ocean'],
         content: {
             ocean: ['криветки тигрові', 'мідії', 'ікра червона', 'філе червоної риби'],
             cheese: ['сир моцарелла'],
@@ -168,6 +175,7 @@ var pizza_info = [
         icon:'assets/images/pizza_4.jpg',
         title: "Россо Густо",
         type: 'Морська піца',
+        filter:['pizza','ocean'],
         content: {
             ocean: ['ікра червона', 'лосось копчений'],
             cheese: ['сир моцарелла'],
