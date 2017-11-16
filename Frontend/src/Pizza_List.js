@@ -16,11 +16,13 @@ var pizza_info = [
             additional: ['томатна паста', 'петрушка']
         },
         small_size:{
+            title: "мала",
             weight: 370,
             size: 30,
             price: 99
         },
         big_size:{
+            title: "велика",
             weight: 660,
             size: 40,
             price: 169
@@ -41,11 +43,13 @@ var pizza_info = [
             additional: ['петрушка', 'оливки']
         },
         small_size:{
+            title: "мала",
             weight: 460,
             size: 30,
             price: 139
         },
         big_size:{
+            title: "велика",
             weight: 840,
             size: 40,
             price: 199
@@ -64,11 +68,13 @@ var pizza_info = [
             additional: ['кукурудза', 'петрушка', 'соус томатний']
         },
         small_size:{
+            title: "мала",
             weight: 430,
             size: 30,
             price: 115
         },
         big_size:{
+            title: "велика",
             weight: 780,
             size: 40,
             price: 179
@@ -86,11 +92,13 @@ var pizza_info = [
             additional: ['перець болгарський',  'соус томатний']
         },
         small_size:{
+            title: "мала",
             weight: 450,
             size: 30,
             price: 111
         },
         big_size:{
+            title: "велика",
             weight: 790,
             size: 40,
             price: 169
@@ -107,6 +115,7 @@ var pizza_info = [
             additional: ['базилік', 'оливкова олія', 'соус томатний']
         },
         small_size:{
+            title: "мала",
             weight: 370,
             size: 30,
             price: 89
@@ -125,11 +134,13 @@ var pizza_info = [
             additional: ['цибуля кримська', 'огірки квашені', 'соус гірчичний']
         },
         small_size:{
+            title: "мала",
             weight: 470,
             size: 30,
             price: 115
         },
         big_size:{
+            title: "велика",
             weight: 780,
             size: 40,
             price: 180
@@ -146,6 +157,7 @@ var pizza_info = [
             additional: ['оливкова олія', 'вершки']
         },
         big_size:{
+            title: "велика",
             weight: 845,
             size: 40,
             price: 399
@@ -162,11 +174,13 @@ var pizza_info = [
             additional: ['оливкова олія', 'вершки']
         },
         small_size:{
+            title: "мала",
             weight: 400,
             size: 30,
             price: 189
         },
         big_size:{
+            title: "велика",
             weight: 700,
             size: 40,
             price: 299
