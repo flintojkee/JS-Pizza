@@ -2,6 +2,7 @@
  * Created by chaika on 02.02.16.
  */
 var Templates = require('../Templates');
+var Storage = require('./Storage');
 
 //Перелік розмірів піци
 var PizzaSize = {
@@ -40,16 +41,24 @@ function isPizzaPresent(pizza, size) {
 
 function removeFromCart(cart_item) {
     //Видалити піцу з кошика
-    //TODO: треба зробити
     Cart.splice(Cart.indexOf(cart_item),1);
     //Після видалення оновити відображення
     updateCart();
 }
-
+function clearOrder() {
+    $(".clear-order").click(function () {
+       Cart = [];
+       $(".order-count").html("0");
+       updateCart();
+    })
+}
 function initialiseCart() {
     //Фукнція віпрацьвуватиме при завантаженні сторінки
     //Тут можна наприклад, зчитати вміст корзини який збережено в Local Storage то показати його
-    //TODO: ...
+   var saved_cart = Storage.read("cart");
+   if(saved_cart){
+       Cart = saved_cart;
+   }
 
     updateCart();
 }
@@ -62,6 +71,8 @@ function getPizzaInCart() {
 function updateCart() {
     //Функція викликається при зміні вмісту кошика
     //Тут можна наприклад показати оновлений кошик на екрані та зберегти вміт кошика в Local Storage
+
+    Storage.write("cart",Cart);
 
     //Очищаємо старі піци в кошику
     $cart.html("");
@@ -78,7 +89,7 @@ function updateCart() {
 
             //Оновлюємо відображення
             updateCart();
-        })
+        });
         $node.find(".minus").click(function(){
             //Зменшуємо кількість замовлених піц
             cart_item.quantity -= 1;
@@ -100,15 +111,18 @@ function updateCart() {
 }
     function updatePrice(){
     var price = 0;
-    var uah = " грн"
+    var quantity = 0;
+    var uah = " грн";
     Cart.forEach(function(pizza){
         price+=(pizza["pizza"] [pizza["size"]] ["price"])*pizza.quantity;
+        quantity+=pizza.quantity;
         });
+    $(".orders-count-span").text(quantity);
     $(".sum-number").text(price+uah);
     }
 exports.removeFromCart = removeFromCart;
 exports.addToCart = addToCart;
-
+exports.clearOrder = clearOrder();
 exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
 
