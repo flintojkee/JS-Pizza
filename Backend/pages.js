@@ -8,5 +8,8 @@ exports.mainPage = function(req, res) {
 };
 
 exports.orderPage = function(req, res) {
-    //TODO: implement
+
+    res.render('orderPage', {
+        pageTitle: 'Замовлення Піци'
+    });
 };

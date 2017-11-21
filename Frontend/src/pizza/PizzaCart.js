@@ -3,7 +3,8 @@
  */
 var Templates = require('../Templates');
 var Storage = require('./Storage');
-
+var API = require('../API');
+var isOrdered = false;
 //Перелік розмірів піци
 var PizzaSize = {
     Big: "big_size",
@@ -52,6 +53,18 @@ function clearOrder() {
        updateCart();
     })
 }
+function orderedItems() {
+    $(".minus").hide();
+    $(".plus").hide();
+    $(".clear-order").hide();
+    $(".count-clear").hide();
+}
+function editedItems() {
+    $(".minus").show();
+    $(".plus").show();
+    $(".clear-order").show();
+    $(".count-clear").show();
+}
 function initialiseCart() {
     //Фукнція віпрацьвуватиме при завантаженні сторінки
     //Тут можна наприклад, зчитати вміст корзини який збережено в Local Storage то показати його
@@ -59,6 +72,11 @@ function initialiseCart() {
    if(saved_cart){
        Cart = saved_cart;
    }
+    if(isOrdered){
+        orderedItems();
+    }else {
+        editedItems();
+    }
 
     updateCart();
 }
@@ -120,10 +138,29 @@ function updateCart() {
     $(".orders-count-span").text(quantity);
     $(".sum-number").text(price+uah);
     }
+    function createOrder(callback) {
+        API.createOrder({
+            name:"Client name",
+            phone:"0671123524",
+            order: Cart
+            },function (err,result) {
+            if(err){
+                return callback(err);
+            }
+            callback(null,result);
+            }
+        )
+    }
+
+    $(".button-order").click(function () {
+    //window.location=("/order.html");
+    isOrdered = true;
+
+    });
 exports.removeFromCart = removeFromCart;
 exports.addToCart = addToCart;
 exports.clearOrder = clearOrder();
 exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
-
+exports.createOrder = createOrder;
 exports.PizzaSize = PizzaSize;

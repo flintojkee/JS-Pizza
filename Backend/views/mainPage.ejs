@@ -10,35 +10,7 @@
         -20%
     </div>
 </div>
-<nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-        <div class="badge-logo">
-            <div class="badge-discount top-badge-discount"></div>
-            <a class="logo" href="#"><h3>Pizza</h3> <h2>KMA</h2></a>
-        </div></div>
-    <div class="navbar-raw">
-        <div class="navbar-top-raw">
-            <div class="phone-number visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">
-                (044) 222 5 222
-            </div>
-            <div class="work-days visible-lg-inline-block visible-md-inline-block">
-                24 години/ 7 днів на тиждень
-            </div>
-            <div class="delivery visible-lg-inline-block">
-                Безкоштовна доставка піци
-            </div>
-            <div type="button" class="login btn btn-warning sign-in-button">
-                Ввійти
-            </div>
-        </div>
-        <div class="navbar-bottom-row">
-        <span class=" pizza-page" style="color:white;">
-            <a href="#" style="color:white;" class="hidden-xs">Піца</a> &nbsp;
-        </span>
-        </div>
-    </div>
-    </div>
-</nav>
+<% include common/navBar.ejs %>
 <div class="container-fluid main-container">
     <div class="row" >
         <div class = "content">
@@ -91,32 +63,7 @@
 </div>
 </div>
 </div>
-<div class="sidenav">
-    <div class="order-row1">
-                <span class="order-list-title">
-                    Замовлення
-                    <span class="badge orange orders-count-span">1</span>
-                </span>
-        <span class="clear-order">
-                    Очистити замовлення
-                    </span>
-    </div>
-    <div class="order-row2" id="cart">
-
-    </div>
-    <div class="order-row3">
-                <span class="sum-title" style="">
-                    Сума замовлення
-                </span>
-        <span class="sum-number" style=""></span>
-        <div class="do-order-button">
-            <button type="button" class="btn btn-warning btn-lg btn-block button-order">
-                Замовити
-            </button>
-        </div>
-
-    </div>
-</div>
+<% include common/sidenav.ejs %>
 </div>
 </div>
 
